@@ -1,7 +1,11 @@
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:space_shooters/space_shooters_game.dart';
 
-class Enemy extends SpriteComponent with HasGameReference<SpaceShootersGame>{
+import 'bullet.dart';
+import 'explosion.dart';
+
+class Enemy extends SpriteComponent with HasGameReference<SpaceShootersGame>, CollisionCallbacks{
 
   Enemy({super.position}) : super(
     size: Vector2.all(enemySize),
@@ -17,6 +21,8 @@ class Enemy extends SpriteComponent with HasGameReference<SpaceShootersGame>{
     sprite = await game.loadSprite(
       'enemy.png'
     );
+
+    add(RectangleHitbox());
   }
 
   @override
@@ -29,4 +35,17 @@ class Enemy extends SpriteComponent with HasGameReference<SpaceShootersGame>{
       removeFromParent();
     }
   }
+
+
+  @override
+  void onCollisionEnd(PositionComponent other) {
+    super.onCollisionEnd(other);
+
+    if (other is Bullet) {
+      other.removeFromParent();
+      removeFromParent();
+      game.add(Explosion(position: position));
+    }
+  }
+
 }

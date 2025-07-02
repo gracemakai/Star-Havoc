@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:space_shooters/components/enemy.dart';
 import 'package:space_shooters/components/player.dart';
 
-class SpaceShootersGame extends FlameGame with PanDetector {
+class SpaceShootersGame extends FlameGame with PanDetector, HasCollisionDetection {
   late Player player;
 
   @override
