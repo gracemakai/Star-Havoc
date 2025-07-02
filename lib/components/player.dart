@@ -1,6 +1,6 @@
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
-import 'package:space_shooters/bullet.dart';
+import 'package:space_shooters/components/bullet.dart';
 import 'package:space_shooters/space_shooters_game.dart';
 
 class Player extends SpriteAnimationComponent with HasGameReference<SpaceShootersGame>{
