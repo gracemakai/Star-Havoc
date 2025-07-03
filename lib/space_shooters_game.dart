@@ -23,9 +23,9 @@ class SpaceShootersGame extends FlameGame
 
     final parallax = await loadParallaxComponent(
       [
-        ParallaxImageData('star_2.png'),
         ParallaxImageData('star_0.png'),
         ParallaxImageData('star_1.png'),
+        ParallaxImageData('star_2.png'),
       ],
       baseVelocity: Vector2(0, -3),
       repeat: ImageRepeat.repeat,
