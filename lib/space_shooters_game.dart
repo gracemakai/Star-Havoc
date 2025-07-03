@@ -32,7 +32,6 @@ class SpaceShootersGame extends FlameGame
       velocityMultiplierDelta: Vector2(0, 5),
     );
     add(parallax);
-    initializeGame();
   }
 
   void initializeGame(){
