@@ -45,7 +45,7 @@ class SpaceShootersGame extends FlameGame
         factory: (index) {
           return Enemy();
         },
-        area: Rectangle.fromLTWH(0, 0, size.x, -Enemy.enemySize)));
+        area: Rectangle.fromLTWH(Enemy.enemySize / 2, 0, size.x - Enemy.enemySize, -Enemy.enemySize)));
 
     add(Hud());
   }
