@@ -34,8 +34,7 @@ class SpaceShootersGame extends FlameGame
     add(parallax);
   }
 
-  void initializeGame(){
-
+  void initializeGame() {
     player = Player();
 
     add(player);
@@ -45,7 +44,8 @@ class SpaceShootersGame extends FlameGame
         factory: (index) {
           return Enemy();
         },
-        area: Rectangle.fromLTWH(Enemy.enemySize / 2, 0, size.x - Enemy.enemySize, -Enemy.enemySize)));
+        area: Rectangle.fromLTWH(Enemy.enemySize / 2, 0,
+            size.x - Enemy.enemySize, -Enemy.enemySize)));
 
     add(Hud());
   }
@@ -83,8 +83,12 @@ class SpaceShootersGame extends FlameGame
     children.whereType<Enemy>().forEach((enemy) => enemy.removeFromParent());
     children.whereType<Bullet>().forEach((bullet) => bullet.removeFromParent());
     children.whereType<Hud>().forEach((hud) => hud.removeFromParent());
-    children.whereType<Explosion>().forEach((explosion) => explosion.removeFromParent());
-    children.whereType<SpawnComponent>().forEach((spawn) => spawn.removeFromParent());
+    children
+        .whereType<Explosion>()
+        .forEach((explosion) => explosion.removeFromParent());
+    children
+        .whereType<SpawnComponent>()
+        .forEach((spawn) => spawn.removeFromParent());
 
     initializeGame();
     resumeEngine();

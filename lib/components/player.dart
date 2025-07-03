@@ -25,7 +25,7 @@ class Player extends SpriteAnimationComponent with HasGameReference<SpaceShooter
     factory: (index) {
       return Bullet(position: position + Vector2(0, -height / 2));
     }, autoStart: false);
-    add(CircleHitbox());
+    add(RectangleHitbox());
 
     game.add(_bulletSpawn);
   }

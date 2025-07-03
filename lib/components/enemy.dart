@@ -45,8 +45,17 @@ class Enemy extends SpriteComponent
       removeFromParent();
       game.add(Explosion(position: position));
       game.currentScore += 1;
-    } else if (other is Player) {
+    }
+  }
+
+  @override
+  void onCollision(
+      Set<Vector2> intersectionPoints, PositionComponent other) {
+    if (other is Player) {
+
       game.gameOver();
     }
+    super.onCollision(intersectionPoints, other);
+
   }
 }
