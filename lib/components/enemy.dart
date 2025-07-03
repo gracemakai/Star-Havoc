@@ -45,6 +45,7 @@ class Enemy extends SpriteComponent with HasGameReference<SpaceShootersGame>, Co
       other.removeFromParent();
       removeFromParent();
       game.add(Explosion(position: position));
+      game.currentScore += 1;
     }
   }
 

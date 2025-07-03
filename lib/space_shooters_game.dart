@@ -6,9 +6,12 @@ import 'package:flame/parallax.dart';
 import 'package:flutter/material.dart';
 import 'package:space_shooters/components/enemy.dart';
 import 'package:space_shooters/components/player.dart';
+import 'package:space_shooters/hud.dart';
 
-class SpaceShootersGame extends FlameGame with PanDetector, HasCollisionDetection {
+class SpaceShootersGame extends FlameGame
+    with PanDetector, HasCollisionDetection {
   late Player player;
+  int currentScore = 0;
 
   @override
   Future<void> onLoad() async {
@@ -36,6 +39,8 @@ class SpaceShootersGame extends FlameGame with PanDetector, HasCollisionDetectio
           return Enemy();
         },
         area: Rectangle.fromLTWH(0, 0, size.x, -Enemy.enemySize)));
+
+    add(Hud());
   }
 
   @override
