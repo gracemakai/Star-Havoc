@@ -1,5 +1,6 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:space_shooters/components/player.dart';
 import 'package:space_shooters/space_shooters_game.dart';
 
 import 'bullet.dart';
@@ -46,6 +47,8 @@ class Enemy extends SpriteComponent with HasGameReference<SpaceShootersGame>, Co
       removeFromParent();
       game.add(Explosion(position: position));
       game.currentScore += 1;
+    }else if (other is Player) {
+      game.gameOver();
     }
   }
 

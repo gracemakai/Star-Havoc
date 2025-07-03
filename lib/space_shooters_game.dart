@@ -8,6 +8,8 @@ import 'package:space_shooters/components/enemy.dart';
 import 'package:space_shooters/components/player.dart';
 import 'package:space_shooters/hud.dart';
 
+import 'high_score_manager.dart';
+
 class SpaceShootersGame extends FlameGame
     with PanDetector, HasCollisionDetection {
   late Player player;
@@ -56,5 +58,23 @@ class SpaceShootersGame extends FlameGame
   @override
   void onPanEnd(DragEndInfo info) {
     player.stopShooting();
+  }
+
+  Future<void> gameOver() async {
+    overlays.add('GameOver');
+
+    pauseEngine();
+
+    final highScore = await HighScoreManager.getHighScore();
+    if (currentScore > highScore) {
+      await HighScoreManager.setHighScore(currentScore);
+    }
+  }
+
+  void resetGame() {
+    currentScore = 0;
+    overlays.remove('GameOver');
+    removeAll(children.whereType<Enemy>());
+    resumeEngine();
   }
 }

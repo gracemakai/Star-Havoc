@@ -2,7 +2,7 @@ import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 import 'package:space_shooters/space_shooters_game.dart';
 
-import 'highscore_manager.dart';
+import 'high_score_manager.dart';
 
 class Hud extends PositionComponent with HasGameReference<SpaceShootersGame> {
 
