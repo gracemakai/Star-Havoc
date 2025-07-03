@@ -1,16 +1,66 @@
-# space_shooters
+# 🚀 Star Havoc
 
-A new Flutter project.
+**Star Havoc** is a fast-paced, retro-inspired arcade game built with [Flutter](https://flutter.dev/) and powered by the [Flame game engine](https://flame-engine.org/). Dodge enemies, blast through alien swarms, and become the last star fighter standing in this cosmic bullet ballet!
 
-## Getting Started
+> A pixel-powered tribute to the old-school space shooter genre — rebuilt for the modern web & mobile universe.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🎮 Gameplay
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- ✨ Classic shoot-em-up mechanics
+- 🚀 Smooth movement and laser-blasting action
+- 🛸 Waves of enemies with increasing difficulty
+- 💥 Satisfying explosions and screen-shaking impact
+- 🎧 Retro sound effects and background music
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+All wrapped in a clean, responsive game loop running right inside your browser or phone — no downloads needed.
+
+---
+
+## 📦 Built With
+
+- 🧱 **Flutter** – Cross-platform framework for web, Android & iOS
+- 🔥 **Flame** – Lightweight game engine for Flutter
+- 🎨 **Dart** – For logic and game mechanics
+- 🎶 **Flame Audio** – For immersive SFX and BGM
+
+---
+
+🌐 Play Online
+Netlify URL: [https://spacewarr.netlify.app/](https://spacewarr.netlify.app/)
+
+---
+🧪 Features Coming Soon
+   - 🧠 Boss fights with advanced AI
+    
+   - 🔫 Power-ups and ship upgrades
+    
+   - 🕹 Leaderboards & high-score tracking
+    
+   - 🌌 Multiple space environments
+    
+   - 👫 Local co-op or PvP mode
+---
+
+🧠 Why This Game?
+Space Shooters started as a passion project to learn the Flame game engine and to revisit the kind of games we grew up playing. It's a love letter to simplicity, challenge, and the hypnotic rhythm of blasting aliens in space.
+
+---
+
+🚧 Disclaimer
+Still under heavy development — expect updates, glitches, and explosions (intentional and otherwise).
+
+---
+
+🏗️ How to Run
+Make sure you have Flutter installed.
+````bash
+    git clone https://github.com/gracemakai/Star-Havoc.git
+    cd solitaire
+    flutter pub get
+    flutter run
+````
+---
+Made with ♥ by Grace, powered by Flame and caffeine.
+
