@@ -32,7 +32,6 @@ class _GameOverState extends State<GameOver> {
 
   @override
   Widget build(BuildContext context) {
-    const blackTextColor = Color.fromRGBO(0, 0, 0, 1.0);
     const whiteTextColor = Color.fromRGBO(255, 255, 255, 1.0);
 
     return Material(
@@ -43,7 +42,7 @@ class _GameOverState extends State<GameOver> {
           height: 400,
           width: 500,
           decoration: const BoxDecoration(
-              color: blackTextColor,
+              color: Color.fromRGBO(0, 0, 0, 0.5),
               borderRadius: BorderRadius.all(
                 Radius.circular(20),
               )
@@ -67,7 +66,7 @@ class _GameOverState extends State<GameOver> {
                 child: const Text('Play again',
                   style: TextStyle(
                     fontSize: 40.0,
-                    color: blackTextColor,
+                    color: Colors.black,
                   ),),
               ),
               const SizedBox(height: 20),

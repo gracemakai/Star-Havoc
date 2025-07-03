@@ -9,7 +9,6 @@ class MainMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const blackTextColor = Color.fromRGBO(0, 0, 0, 1.0);
     const whiteTextColor = Color.fromRGBO(255, 255, 255, 1.0);
 
     return Material(
@@ -20,7 +19,7 @@ class MainMenu extends StatelessWidget {
           height: 400,
           width: 400,
           decoration: const BoxDecoration(
-              color: blackTextColor,
+              color: Color.fromRGBO(0, 0, 0, 0.5),
               borderRadius: BorderRadius.all(
                 Radius.circular(20),
               )
@@ -51,7 +50,7 @@ class MainMenu extends StatelessWidget {
                     'Play',
                     style: TextStyle(
                       fontSize: 40.0,
-                      color: blackTextColor,
+                      color: Colors.black,
                     ),
                   ),
                 ),
