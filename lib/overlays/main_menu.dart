@@ -29,7 +29,7 @@ class MainMenu extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Space shooters',
+                'Star Havoc',
                 style: TextStyle(
                   fontSize: 24,
                   color: whiteTextColor,
