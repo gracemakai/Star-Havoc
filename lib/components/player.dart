@@ -1,9 +1,9 @@
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:flutter/material.dart';
 import 'package:space_shooters/components/bullet.dart';
 import 'package:space_shooters/space_shooters_game.dart';
 
-class Player extends SpriteAnimationComponent with HasGameReference<SpaceShootersGame>{
+class Player extends SpriteAnimationComponent with HasGameReference<SpaceShootersGame>, CollisionCallbacks{
 
   late final SpawnComponent _bulletSpawn;
 
@@ -25,6 +25,7 @@ class Player extends SpriteAnimationComponent with HasGameReference<SpaceShooter
     factory: (index) {
       return Bullet(position: position + Vector2(0, -height / 2));
     }, autoStart: false);
+    add(CircleHitbox());
 
     game.add(_bulletSpawn);
   }

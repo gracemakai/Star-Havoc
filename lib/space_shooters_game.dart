@@ -4,10 +4,12 @@ import 'package:flame/experimental.dart';
 import 'package:flame/game.dart';
 import 'package:flame/parallax.dart';
 import 'package:flutter/material.dart';
+import 'package:space_shooters/components/bullet.dart';
 import 'package:space_shooters/components/enemy.dart';
 import 'package:space_shooters/components/player.dart';
 import 'package:space_shooters/hud.dart';
 
+import 'components/explosion.dart';
 import 'high_score_manager.dart';
 
 class SpaceShootersGame extends FlameGame
@@ -30,6 +32,10 @@ class SpaceShootersGame extends FlameGame
       velocityMultiplierDelta: Vector2(0, 5),
     );
     add(parallax);
+    initializeGame();
+  }
+
+  void initializeGame(){
 
     player = Player();
 
@@ -74,7 +80,14 @@ class SpaceShootersGame extends FlameGame
   void resetGame() {
     currentScore = 0;
     overlays.remove('GameOver');
-    removeAll(children.whereType<Enemy>());
+    player.removeFromParent();
+    children.whereType<Enemy>().forEach((enemy) => enemy.removeFromParent());
+    children.whereType<Bullet>().forEach((bullet) => bullet.removeFromParent());
+    children.whereType<Hud>().forEach((hud) => hud.removeFromParent());
+    children.whereType<Explosion>().forEach((explosion) => explosion.removeFromParent());
+    children.whereType<SpawnComponent>().forEach((spawn) => spawn.removeFromParent());
+
+    initializeGame();
     resumeEngine();
   }
 }

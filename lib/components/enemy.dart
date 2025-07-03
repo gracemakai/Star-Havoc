@@ -6,12 +6,13 @@ import 'package:space_shooters/space_shooters_game.dart';
 import 'bullet.dart';
 import 'explosion.dart';
 
-class Enemy extends SpriteComponent with HasGameReference<SpaceShootersGame>, CollisionCallbacks{
-
-  Enemy({super.position}) : super(
-    size: Vector2.all(enemySize),
-    anchor: Anchor.center,
-  );
+class Enemy extends SpriteComponent
+    with HasGameReference<SpaceShootersGame>, CollisionCallbacks {
+  Enemy({super.position})
+      : super(
+          size: Vector2.all(enemySize),
+          anchor: Anchor.center,
+        );
 
   static const enemySize = 100.0;
 
@@ -19,9 +20,7 @@ class Enemy extends SpriteComponent with HasGameReference<SpaceShootersGame>, Co
   Future<void> onLoad() async {
     await super.onLoad();
 
-    sprite = await game.loadSprite(
-      'enemy.png'
-    );
+    sprite = await game.loadSprite('enemy.png');
 
     add(RectangleHitbox());
   }
@@ -37,7 +36,6 @@ class Enemy extends SpriteComponent with HasGameReference<SpaceShootersGame>, Co
     }
   }
 
-
   @override
   void onCollisionEnd(PositionComponent other) {
     super.onCollisionEnd(other);
@@ -47,9 +45,8 @@ class Enemy extends SpriteComponent with HasGameReference<SpaceShootersGame>, Co
       removeFromParent();
       game.add(Explosion(position: position));
       game.currentScore += 1;
-    }else if (other is Player) {
+    } else if (other is Player) {
       game.gameOver();
     }
   }
-
 }
