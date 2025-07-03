@@ -42,4 +42,20 @@ class Player extends SpriteAnimationComponent with HasGameReference<SpaceShooter
     _bulletSpawn.timer.stop();
   }
 
+  @override
+  void update(double dt) {
+    super.update(dt);
+
+    if (position.x < width / 2) {
+      position.x = width / 2;
+    } else if (position.x > game.size.x - width / 2) {
+      position.x = game.size.x - width / 2;
+    }
+
+    if (position.y < height / 2) {
+      position.y = height / 2;
+    } else if (position.y > game.size.y - height / 2) {
+      position.y = game.size.y - height / 2;
+    }
+  }
 }
